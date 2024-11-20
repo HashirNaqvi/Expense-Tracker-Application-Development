@@ -56,12 +56,22 @@ o	GitHub: For project collaboration and repository hosting.
 **Development Workflow:**
 
 •	Designed the UI using Figma  before implementing it with React.
+
 •	Set up the backend using Node.js and Express.js, integrating with MongoDB for data storage.
+
 •	Tested API endpoints with Postman to ensure smooth frontend-backend communication.
+
 •	Implemented user authentication with JWT and password hashing using Bcrypt.js.
+
 •	Styled the application with Tailwind CSS/Bootstrap for a modern and responsive design.
+
 •	Deployed the application on a cloud platform (if applicable) for public accessibility.
+
+
+
 Outcome:
+
+
 The Expense Tracker Application provides a reliable and scalable solution for tracking personal finances. It combines modern web technologies to offer an intuitive experience, ensuring data security, fast performance, and ease of use. This project showcases expertise in full-stack development using the MERN stack and highlights the ability to integrate and test various tools and technologies effectively.
 
 
