@@ -52,7 +52,7 @@ const LoginForm = () => {
     let timer;
     if (isSuccess) {
       timer = setTimeout(() => {
-        navigate("/profile");
+        navigate("/");
       }, 3000);
     }
     return () => clearTimeout(timer);
