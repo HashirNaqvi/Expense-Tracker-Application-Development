@@ -9,6 +9,7 @@ import PublicNavbar from "./components/Navbar/PublicNavbar";
 import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import PrivateNavbar from "./components/Navbar/PrivateNavbar";
+import AddCategory from "./components/Category/AddCategory";
 
 // Create a QueryClient instance with default options
 const queryClient = new QueryClient({
@@ -39,6 +40,7 @@ function App() {
             <Route path="/" element={<HeroSection />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/add-category" element={<AddCategory />} />
             {/* Catch-all route for undefined paths */}
             <Route path="*" element={<div>404 - Page Not Found</div>} />
           </Routes>
