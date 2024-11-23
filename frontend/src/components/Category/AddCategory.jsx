@@ -10,24 +10,38 @@ import {
 import { SiDatabricks } from "react-icons/si";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
+import { addCategoryAPI } from "../../components/services/CategoryServices/categoryServices";
+import AlertMessage from "../Alert/AlertMessage";
 
 const validationSchema = Yup.object({
-  name: Yup.string()
-    .required("Category name is required")
-    .oneOf(["income", "expense"]),
+  name: Yup.string().required("Category name is required"),
   type: Yup.string()
     .required("Category type is required")
     .oneOf(["income", "expense"]),
 });
 
 const AddCategory = () => {
+  //Navigate
+  const navigate = useNavigate();
+
+  // Mutation
+  const { mutateAsync, isPending, isError, error, isSuccess } = useMutation({
+    mutationFn: addCategoryAPI,
+    mutationKey: ["login"],
+  });
+
   const formik = useFormik({
     initialValues: {
       type: "",
       name: "",
     },
+    validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      mutateAsync(values)
+        .then((data) => {
+          navigate("/categories");
+        })
+        .catch((e) => console.log(e));
     },
   });
 
@@ -43,7 +57,7 @@ const AddCategory = () => {
         <p className="text-gray-600">Fill in the details below.</p>
       </div>
       {/* Display alert message */}
-      {/* {isError && (
+      {isError && (
         <AlertMessage
           type="error"
           message={
@@ -57,7 +71,7 @@ const AddCategory = () => {
           type="success"
           message="Category added successfully, redirecting..."
         />
-      )} */}
+      )}
       {/* Category Type */}
       <div className="space-y-2">
         <label
