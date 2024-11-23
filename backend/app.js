@@ -4,7 +4,7 @@ const cors = require("cors");
 const userRouter = require("./routes/UserRouter");
 const errorHandler = require("./middlewares/errorHandlerMiddleware");
 const categoryRouter = require("./routes/CategoryRouter");
-// const transactionRouter = require("./routes/transactionRouter");
+const transactionRouter = require("./routes/TranscationRouter");
 const app = express();
 
 //!Connect to mongodb

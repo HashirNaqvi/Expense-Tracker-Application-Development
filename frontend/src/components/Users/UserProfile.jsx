@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { useMutation } from "@tanstack/react-query";
 import UpdatePassword from "./UpdatePassword";
 import { updateProfileAPI } from "../services/users/userService";
-import AlertMessage from "../Alert/AlertMessage";
+import AlertMessage from "../../components/Alert/AlertMessage";
 
 const UserProfile = () => {
   // Mutation

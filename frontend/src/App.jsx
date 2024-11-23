@@ -10,7 +10,10 @@ import Login from "./components/Users/Login";
 import Register from "./components/Users/Register";
 import PrivateNavbar from "./components/Navbar/PrivateNavbar";
 import AddCategory from "./components/Category/AddCategory";
-
+import CategoriesList from "./components/Category/CategoriesList";
+import UpdateCategory from "./components/Category/UpdateCategory";
+import TransactionForm from "./components/Transcation/TransactionForm";
+import UserProfile from "./components/Users/UserProfile";
 // Create a QueryClient instance with default options
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,6 +44,10 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/add-category" element={<AddCategory />} />
+            <Route path="/categories" element={<CategoriesList />} />
+            <Route path="/update-category/:id" element={<UpdateCategory />} />
+            <Route path="/add-transaction" element={<TransactionForm />} />
+            <Route path="/profile" element={<UserProfile />} />
             {/* Catch-all route for undefined paths */}
             <Route path="*" element={<div>404 - Page Not Found</div>} />
           </Routes>
